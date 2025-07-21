@@ -6,7 +6,7 @@
 
 ## 🧠 Descripción general
 
-Este juego nace como aplicación práctica de un método de diseño de actividades terapéuticas gamificadas. Las actividades sociales se definen mediante una plantilla estructurada (preactividad, actividad y postactividad) que luego se traduce a una rutina, y finalmente se implementa como una misión dentro del entorno simulado.
+Este juego nace como aplicación práctica de un método de diseño de actividades terapéuticas gamificadas. Las actividades sociales se definen mediante una plantilla estructurada que luego se traduce a una rutina, y finalmente se implementa como una misión dentro del entorno simulado.
 
 En "Teabot: City Adventures", los niños realizan tareas cotidianas (como ir a la tienda o cruzar la calle) en un entorno seguro, diseñado para simular la experiencia real pero con el control necesario para asegurar aprendizaje y repetición. La figura central del juego es **Teabot**, un robot guía que ayuda al niño en su camino por la ciudad.
 
