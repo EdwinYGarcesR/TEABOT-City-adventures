@@ -1,1 +1,51 @@
 
+LICENCIA Y CRÉDITOS
+
+Este proyecto incluye contenido propio y recursos externos cuyo crédito corresponde a sus respectivos autores. A continuación, se detallan las fuentes y licencias aplicables.
+
+Asset Pack Utilizado:
+----------------------
+Nombre del asset pack: Free City Builder
+Autor: Penzilla
+Fuente original: https://penzilla.itch.io/free-city-builder
+Licencia del asset: Uso gratuito con atribución requerida según lo especificado por el autor en itch.io.
+
+Uso en este proyecto:
+----------------------
+Los recursos visuales del pack "Free City Builder" de Penzilla se emplean exclusivamente como parte del entorno gráfico del proyecto. No se distribuyen de forma individual ni se comercializan por separado.
+
+Créditos del creador del asset pack:
+"Penzilla – https://penzilla.itch.io/"
+
+Assets propios:
+---------------
+Los siguientes elementos fueron creados exclusivamente para este proyecto por el autor:
+
+- Teabot en su versión de la ciudad, en todas sus variantes
+- 20 Tiles agregados al tilemap de la ciudad
+- Modificaciones de los assets packs utilizados
+- Logotipo
+
+Estos assets están cubiertos por la misma licencia general del proyecto (GPLv3)
+
+Uso de inteligencia artificial:
+-------------------------------
+Este proyecto hace uso de herramientas de inteligencia artificial para la generación de ciertos contenidos, bajo los términos de uso y licencias correspondientes:
+
+- ElevenLabs para narración de audio.
+- DALL·E para generación de imágenes o texturas correspondientes a objetosd einteracción
+
+Todos los contenidos generados por IA se utilizan con fines de desarrollo y/o apoyo creativo, y se integran bajo la licencia general del proyecto (GPLv3), siempre que sus términos originales lo permitan.
+
+Licencia del proyecto:
+----------------------
+Todo el código y contenido propio de este proyecto están licenciados bajo los términos de la **Licencia Pública General GNU, versión 3 (GPLv3)**.
+
+Esto significa que:
+- Puedes usar, modificar y redistribuir este proyecto libremente.
+- Cualquier obra derivada debe conservar esta misma licencia.
+- El código fuente debe estar disponible al distribuir una versión modificada.
+
+Para más información, consulta el archivo `LICENSE` incluido en este repositorio, o visita:
+https://www.gnu.org/licenses/gpl-3.0.html
+
