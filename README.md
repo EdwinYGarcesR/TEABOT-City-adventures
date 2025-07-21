@@ -1,5 +1,6 @@
 # Teabot: City Adventures
-![Logo del juego](Proyecto Godot/gm_cais/Assets/teabot logo.png)
+![Logo del juego](ProyectoGodot/gm_cais/Assets/teabotlogo.png)
+
 **Teabot: City Adventures** es un prototipo de videojuego educativo desarrollado como herramienta terapéutica para niños con Trastorno del Espectro Autista (TEA). El proyecto combina principios del diseño centrado en el humano, el juego serio y la gamificación para apoyar el desarrollo de habilidades sociales mediante simulaciones en un entorno virtual.
 
 ---
