@@ -59,6 +59,6 @@ A la comunidad de Godot y a los desarrolladores de bibliotecas y recursos de uso
 
 ## 📚 Publicación y contacto
 
-Este proyecto forma parte de una investigación en curso. Si deseas saber más o colaborar, por favor contacta al autor.
+Este proyecto forma parte de una investigación en curso. Si deseas saber más o colaborar, por favor contacta conmigo.
 
 
