@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckgy6i05r28bi"]
+
+[ext_resource type="Script" uid="uid://e7w6von13nhp" path="res://Scripts/Mensajeloop.gd" id="1_ift2x"]
+[ext_resource type="Theme" uid="uid://cnlij48uys2fs" path="res://Assets/balloon_desing.tres" id="1_y6fi7"]
+
+[node name="Mensajeloop" type="CanvasLayer"]
+script = ExtResource("1_ift2x")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_top = 0.134
+anchor_right = 0.3
+anchor_bottom = 0.263
+offset_left = 5.0
+offset_top = 0.168007
+offset_right = -6.60001
+offset_bottom = 16.576
+scale = Vector2(1.02053, 0.834844)
+mouse_filter = 2
+theme = ExtResource("1_y6fi7")
+
+[node name="Panel" type="Panel" parent="Control"]
+clip_children = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.066
+anchor_right = 0.977
+anchor_bottom = 1.0
+offset_top = 0.0386343
+offset_right = 458.482
+offset_bottom = 84.1106
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.415595, 0.543407)
+mouse_filter = 2
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Control/Panel"]
+layout_mode = 2
+anchor_left = 0.000598851
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.53
+offset_top = 29.0
+offset_right = -331.8
+offset_bottom = -90.472
+scale = Vector2(1.76766, 1.76766)
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

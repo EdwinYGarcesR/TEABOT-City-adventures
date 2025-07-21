@@ -1,0 +1,16 @@
+~ escena1
+do Global.load_mp3(0)
+do play_audio()
+TeaBot: La misión que tenemos hoy es emocionante: Iremos a la tienda.\nPrimero, salgamos a la calle
+do change_station.set_glow(true)
+#TeaBot: Primero, salgamos a la calle
+=> END
+
+~ escena2
+do Global.load_mp3(1)
+do play_audio()
+do tienda.set_glow(true)
+TeaBot: Ya estamos en la calle. ¿Ves la tienda? es esa casita roja que brilla.\nQue suerte, tenemos la tienda justo al lado.
+#TeaBot: ¿Ves la tienda? es esa casita roja que brilla
+#TeaBot: Que suerte, tenemos la tienda justo al lado.
+=> END

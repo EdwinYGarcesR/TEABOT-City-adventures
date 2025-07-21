@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="GM_CAIS"
+run/main_scene="uid://smenit0xx8ri"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="uid://bsqquk7oamkjr"
+
+[autoload]
+
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Global="*res://Scripts/Global.gd"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://Dialogues/balloon.tscn"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Dialogues/tiendalvl1.dialogue", "res://Dialogues/bucle_tienda.dialogue", "res://Dialogues/menu_inicial.dialogue", "res://Dialogues/tiendalvl2.dialogue", "res://Dialogues/tiendalvl3.dialogue")

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://pyl6jd60fm38"
+path="res://.godot/imported/tiendalvl2.dialogue-02cf4f55d5b9c3082e8140415aca7b0b.tres"
+
+[deps]
+
+source_file="res://Dialogues/tiendalvl2.dialogue"
+dest_files=["res://.godot/imported/tiendalvl2.dialogue-02cf4f55d5b9c3082e8140415aca7b0b.tres"]
+
+[params]
+
+defaults=true

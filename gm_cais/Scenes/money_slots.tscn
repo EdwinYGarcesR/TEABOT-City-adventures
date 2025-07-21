@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu7vducfc46da"]
+
+[ext_resource type="Texture2D" uid="uid://gccoj7x2p2st" path="res://icon.svg" id="1_2ucl5"]
+[ext_resource type="Script" uid="uid://dy5fsjjp3o3go" path="res://Scripts/MoneySlots.gd" id="1_bolin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bolin"]
+size = Vector2(126, 128)
+
+[node name="MoneySlot" type="Node2D"]
+z_index = -1
+script = ExtResource("1_bolin")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.194349, 0.194349, 0.194349, 1)
+self_modulate = Color(1, 1, 1, 0.560784)
+texture = ExtResource("1_2ucl5")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_bolin")

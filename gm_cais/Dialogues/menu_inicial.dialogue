@@ -1,0 +1,50 @@
+
+~ escena1
+do Global.load_mp3_menu(0)
+do play_audio()
+TeaBot: Hola, es un placer conocerte Mi nombre es TeaBot.\nSoy un robot diseñado para ayudarte a completar diferentes misiones
+do Global.load_mp3_menu(1)
+do play_audio()
+TeaBot: Entrenaremos juntos para mejorar tus habilidades de comunicación e interacción.\nPero antes de comenzar, vamos a personalizar tu experiencia, sigue las instrucciones
+do animation_menu.play("Show_m1")
+=> END
+
+~ escena2
+do Global.load_mp3_menu(2)
+do play_audio()
+TeaBot: Selecciona la versión de robot que prefieres. ¿Robot hombre o robot mujer?\nMi voz cambiará dependiendo de que versión escojas.
+=> END
+
+~ escena3
+do Global.load_mp3_menu(3)
+do play_audio()
+TeaBot: Puedes cambiarme el color, elige el que más te guste.
+=> END
+
+~ escena3_1
+do Global.load_mp3_menu(4)
+do play_audio()
+TeaBot: Si este color te gusta, puedes darle a la flecha siguiente para continuar
+=> END
+
+~ escena4
+do Global.load_mp3_menu(5)
+do play_audio()
+TeaBot: Ahora vamos a crear tu personaje, elige lo que más te guste.\nDale a las flechas para cambiar el aspecto de tu cabello, tu cara y tu ropa
+=> END
+
+~ escena5
+do Global.load_mp3_menu(6)
+do play_audio()
+TeaBot: Queda 1 paso para terminar. Presta atención.\nDurante las misiones, usaré un color para iluminar nuestro siguiente objetivo.
+do Global.load_mp3_menu(7)
+do play_audio()
+TeaBot: Elige el color que más te guste. Recuerda, ese color te indicará a donde debemos ir en cada misión
+=> END
+
+~ escena6
+do Global.load_mp3_menu(8)
+do play_audio()
+TeaBot: Muy bien hecho, estamos listos. Es hora de comenzar con las misiones
+do transition.close_and_change("res://Scenes/level_selector.tscn")
+=> END

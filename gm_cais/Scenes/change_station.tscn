@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://otie2iwdcy3l"]
+
+[ext_resource type="Script" uid="uid://drglgq0ie6s3p" path="res://Scripts/ChangeStation.gd" id="1_j8tga"]
+[ext_resource type="Texture2D" uid="uid://gccoj7x2p2st" path="res://icon.svg" id="2_rkny2"]
+[ext_resource type="PackedScene" uid="uid://ywoel8qdx1lv" path="res://Scenes/transition.tscn" id="3_rkny2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovi1j"]
+size = Vector2(21.5, 22)
+
+[node name="ChangeStation" type="Node2D"]
+script = ExtResource("1_j8tga")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rkny2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -0.999998)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_ovi1j")
+
+[node name="Transition" parent="." instance=ExtResource("3_rkny2")]
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

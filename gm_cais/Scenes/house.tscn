@@ -1,0 +1,250 @@
+[gd_scene load_steps=18 format=4 uid="uid://csn7vn1y8uijw"]
+
+[ext_resource type="Script" uid="uid://bfaiytbnsxf4a" path="res://Scripts/House.gd" id="1_3jr7h"]
+[ext_resource type="TileSet" uid="uid://b3gopr6v61ile" path="res://Assets/tilemap_layer.tres" id="2_bu6dc"]
+[ext_resource type="PackedScene" uid="uid://otie2iwdcy3l" path="res://Scenes/change_station.tscn" id="2_n87ef"]
+[ext_resource type="PackedScene" uid="uid://cab34l7km8211" path="res://Scenes/world_tile.tscn" id="3_l3jqw"]
+[ext_resource type="Texture2D" uid="uid://ht60r8t0wbd" path="res://Assets/FreeCityBuilder/FreeAssets/Tile_paredazul.png" id="4_gau5j"]
+[ext_resource type="Texture2D" uid="uid://bjxnubfybpvbs" path="res://Assets/FreeCityBuilder/FreeAssets/Tile_cama.png" id="5_l3jqw"]
+[ext_resource type="Texture2D" uid="uid://c8rtagm4conbm" path="res://Assets/FreeCityBuilder/FreeAssets/Tile_window.png" id="5_ttg8n"]
+[ext_resource type="Texture2D" uid="uid://dd53h10khqtbd" path="res://Assets/FreeCityBuilder/FreeAssets/Tile_guarddaropa.png" id="6_0h1dt"]
+[ext_resource type="Texture2D" uid="uid://d3ty2a3w1yxtt" path="res://Assets/FreeCityBuilder/FreeAssets/Tile_pc.png" id="8_karln"]
+[ext_resource type="Texture2D" uid="uid://c0cqr4e06dokq" path="res://Assets/FreeCityBuilder/FreeAssets/Decor_Boxes.png" id="9_j14gn"]
+[ext_resource type="Texture2D" uid="uid://31wdvqgtyoiq" path="res://Assets/FreeCityBuilder/FreeAssets/Plant.png" id="10_tj63m"]
+[ext_resource type="PackedScene" uid="uid://41col1ggcja7" path="res://Scenes/character.tscn" id="11_0h1dt"]
+[ext_resource type="Texture2D" uid="uid://b324c2ngup3vc" path="res://Assets/FreeCityBuilder/FreeAssets/Tile_puerta_casa.png" id="13_karln"]
+[ext_resource type="PackedScene" uid="uid://cdriqklv02x0c" path="res://Scenes/item.tscn" id="14_j14gn"]
+[ext_resource type="PackedScene" uid="uid://ckgy6i05r28bi" path="res://Scenes/mensajeloop.tscn" id="14_karln"]
+[ext_resource type="Texture2D" uid="uid://b0f5kidxmgr84" path="res://Assets/FreeCityBuilder/FreeAssets/Billetera.png" id="15_tj63m"]
+
+[sub_resource type="Curve2D" id="Curve2D_okrnj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 380, 344, 0, 0, 0, 0, 457, 301, 0, 0, 0, 0, 615, 391, 0, 0, 0, 0, 755, 309)
+}
+point_count = 4
+
+[node name="House" type="Node2D"]
+script = ExtResource("1_3jr7h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.8781, 16.3677)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(0, -75)
+scale = Vector2(0.2, 0.2)
+tile_map_data = PackedByteArray("AAALAAQABwAAAAAAAAALAAMABwAAAAAAAAALAAIABwAAAAAAAAALAAEABwAAAAAAAAALAAAABwAAAAAAAAAMAAAABwAAAAAAAAAMAAEABwAAAAAAAAAMAAIABwAAAAAAAAAMAAMABwAAAAAAAAAMAAQABwAAAAAAAAAPAAYABgAAAAAAAAAOAAYABgAAAAAAAAANAAYABgAAAAAAAAANAAUABwAAAAAAAAAMAAUABwAAAAAAAAALAAUABwAAAAAAAAAKAAUABwAAAAAAAAALAAYABgAAAAAAAAAMAAYABgAAAAAAAAAKAAYABgAAAAAAAAAKAAQABwAAAAAAAAAKAAMABwAAAAAAAAAKAAIABwAAAAAAAAAKAAEABwAAAAAAAAANAAEABwAAAAAAAAAOAAEABwAAAAAAAAAPAAEABwAAAAAAAAAQAAEABgAAAAAAAAAQAAIABgAAAAAAAAAQAAMABgAAAAAAAAAQAAQABgAAAAAAAAAQAAUABgAAAAAAAAAQAAYABgAAAAAAAAAPAAUABwAAAAAAAAAPAAQABwAAAAAAAAAPAAMABwAAAAAAAAAPAAIABwAAAAAAAAAOAAIABwAAAAAAAAANAAIABwAAAAAAAAANAAMABwAAAAAAAAAOAAMABwAAAAAAAAAOAAQABwAAAAAAAAAOAAUABwAAAAAAAAAJAAAABgAAAAAAAAAKAAAABwAAAAAAAAAJAP//BgAAAAAAAAAJAAEABgAAAAAAAAAJAAIABgAAAAAAAAAJAAMABgAAAAAAAAAJAAQABgAAAAAAAAAJAAUABgAAAAAAAAAJAAYABgAAAAAAAAAKAP//BgAAAAAAAAALAP//BgAAAAAAAAAMAP//BgAAAAAAAAANAP//BgAAAAAAAAAOAP//BgAAAAAAAAAPAP//BgAAAAAAAAAQAP//BgAAAAAAAAAQAAAABgAAAAAAAAAPAAAABwAAAAAAAAAOAAAABwAAAAAAAAANAAAABwAAAAAAAAANAAQABwAAAAAAAAA=")
+tile_set = ExtResource("2_bu6dc")
+
+[node name="Tiles" type="Node2D" parent="."]
+position = Vector2(-5, -44)
+
+[node name="Walls" type="Node2D" parent="Tiles"]
+
+[node name="World_tile2" parent="Tiles/Walls" instance=ExtResource("3_l3jqw")]
+position = Vector2(497, 161)
+scale = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" parent="Tiles/Walls/World_tile2" index="0"]
+texture = ExtResource("4_gau5j")
+
+[node name="World_tile3" parent="Tiles/Walls" instance=ExtResource("3_l3jqw")]
+position = Vector2(395, 222)
+scale = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" parent="Tiles/Walls/World_tile3" index="0"]
+texture = ExtResource("4_gau5j")
+
+[node name="World_tile4" parent="Tiles/Walls" instance=ExtResource("3_l3jqw")]
+position = Vector2(298, 280)
+scale = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" parent="Tiles/Walls/World_tile4" index="0"]
+texture = ExtResource("4_gau5j")
+
+[node name="World_tile" parent="Tiles/Walls" instance=ExtResource("3_l3jqw")]
+position = Vector2(195, 341)
+scale = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" parent="Tiles/Walls/World_tile" index="0"]
+texture = ExtResource("4_gau5j")
+
+[node name="World_tile5" parent="Tiles/Walls" instance=ExtResource("3_l3jqw")]
+position = Vector2(634, 160)
+scale = Vector2(-0.6, 0.6)
+
+[node name="Sprite2D" parent="Tiles/Walls/World_tile5" index="0"]
+texture = ExtResource("4_gau5j")
+
+[node name="World_tile6" parent="Tiles/Walls" instance=ExtResource("3_l3jqw")]
+position = Vector2(736, 221)
+scale = Vector2(-0.6, 0.6)
+
+[node name="Sprite2D" parent="Tiles/Walls/World_tile6" index="0"]
+texture = ExtResource("4_gau5j")
+
+[node name="World_tile7" parent="Tiles/Walls" instance=ExtResource("3_l3jqw")]
+position = Vector2(839, 283)
+scale = Vector2(-0.6, 0.6)
+
+[node name="Sprite2D" parent="Tiles/Walls/World_tile7" index="0"]
+texture = ExtResource("4_gau5j")
+
+[node name="World_tile8" parent="Tiles/Walls" instance=ExtResource("3_l3jqw")]
+position = Vector2(933, 340)
+scale = Vector2(-0.6, 0.6)
+
+[node name="Sprite2D" parent="Tiles/Walls/World_tile8" index="0"]
+texture = ExtResource("4_gau5j")
+
+[node name="Windows" type="Node2D" parent="Tiles"]
+
+[node name="World_tile" parent="Tiles/Windows" instance=ExtResource("3_l3jqw")]
+position = Vector2(510, 163)
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" parent="Tiles/Windows/World_tile" index="0"]
+texture = ExtResource("5_ttg8n")
+
+[node name="World_tile2" parent="Tiles/Windows" instance=ExtResource("3_l3jqw")]
+position = Vector2(624, 165)
+scale = Vector2(-0.4, 0.4)
+
+[node name="Sprite2D" parent="Tiles/Windows/World_tile2" index="0"]
+texture = ExtResource("5_ttg8n")
+
+[node name="World_tile3" parent="Tiles/Windows" instance=ExtResource("3_l3jqw")]
+position = Vector2(693, 206)
+scale = Vector2(-0.4, 0.4)
+
+[node name="Sprite2D" parent="Tiles/Windows/World_tile3" index="0"]
+texture = ExtResource("5_ttg8n")
+
+[node name="World_tile4" parent="Tiles/Windows" instance=ExtResource("3_l3jqw")]
+position = Vector2(925, 345)
+scale = Vector2(-0.4, 0.4)
+
+[node name="Sprite2D" parent="Tiles/Windows/World_tile4" index="0"]
+texture = ExtResource("5_ttg8n")
+
+[node name="Extras" type="Node2D" parent="Tiles"]
+
+[node name="World_tile2" parent="Tiles/Extras" instance=ExtResource("3_l3jqw")]
+position = Vector2(368, 273)
+rotation = 3.14159
+scale = Vector2(0.8, -0.8)
+
+[node name="Sprite2D" parent="Tiles/Extras/World_tile2" index="0"]
+texture = ExtResource("6_0h1dt")
+
+[node name="World_tile" parent="Tiles/Extras" instance=ExtResource("3_l3jqw")]
+position = Vector2(302, 380)
+scale = Vector2(-0.8, 0.8)
+
+[node name="Sprite2D" parent="Tiles/Extras/World_tile" index="0"]
+texture = ExtResource("5_l3jqw")
+
+[node name="World_tile3" parent="Tiles/Extras" instance=ExtResource("3_l3jqw")]
+position = Vector2(584, 553)
+scale = Vector2(-0.6, 0.6)
+
+[node name="Sprite2D" parent="Tiles/Extras/World_tile3" index="0"]
+z_index = 1
+texture = ExtResource("8_karln")
+
+[node name="World_tile4" parent="Tiles/Extras" instance=ExtResource("3_l3jqw")]
+position = Vector2(575, 213)
+scale = Vector2(-0.4, 0.4)
+
+[node name="Sprite2D" parent="Tiles/Extras/World_tile4" index="0"]
+texture = ExtResource("9_j14gn")
+
+[node name="World_tile5" parent="Tiles/Extras" instance=ExtResource("3_l3jqw")]
+position = Vector2(612, 233)
+scale = Vector2(-0.4, 0.4)
+
+[node name="Sprite2D" parent="Tiles/Extras/World_tile5" index="0"]
+texture = ExtResource("9_j14gn")
+
+[node name="World_tile6" parent="Tiles/Extras" instance=ExtResource("3_l3jqw")]
+position = Vector2(466, 266)
+scale = Vector2(-0.4, 0.4)
+
+[node name="Sprite2D" parent="Tiles/Extras/World_tile6" index="0"]
+texture = ExtResource("10_tj63m")
+
+[node name="World_tile7" parent="Tiles/Extras" instance=ExtResource("3_l3jqw")]
+position = Vector2(504, 245)
+scale = Vector2(-0.4, 0.4)
+
+[node name="Sprite2D" parent="Tiles/Extras/World_tile7" index="0"]
+texture = ExtResource("10_tj63m")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_okrnj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(380, 344)
+rotation = 0.504861
+rotates = false
+
+[node name="Character" parent="Path2D/PathFollow2D" instance=ExtResource("11_0h1dt")]
+position = Vector2(-29.3029, -40.1788)
+rotation = -0.363385
+scale = Vector2(0.5, 0.5)
+
+[node name="ChangeStation" parent="." instance=ExtResource("2_n87ef")]
+position = Vector2(776, 258)
+scene = "res://Scenes/city.tscn"
+point_map = 1.0
+
+[node name="Sprite2D" parent="ChangeStation" index="0"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("13_karln")
+
+[node name="CollisionShape2D" parent="ChangeStation/Area2D" index="0"]
+position = Vector2(23, -12)
+scale = Vector2(4, 6)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Wallet" parent="." instance=ExtResource("14_j14gn")]
+position = Vector2(406, 180)
+point_map = 0.2
+
+[node name="Sprite2D" parent="Wallet" index="0"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("15_tj63m")
+
+[node name="CollisionShape2D" parent="Wallet/Area2D" index="0"]
+scale = Vector2(3, 3)
+
+[node name="Mensajeloop" parent="." instance=ExtResource("14_karln")]
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+
+[editable path="Tiles/Walls/World_tile2"]
+[editable path="Tiles/Walls/World_tile3"]
+[editable path="Tiles/Walls/World_tile4"]
+[editable path="Tiles/Walls/World_tile"]
+[editable path="Tiles/Walls/World_tile5"]
+[editable path="Tiles/Walls/World_tile6"]
+[editable path="Tiles/Walls/World_tile7"]
+[editable path="Tiles/Walls/World_tile8"]
+[editable path="Tiles/Windows/World_tile"]
+[editable path="Tiles/Windows/World_tile2"]
+[editable path="Tiles/Windows/World_tile3"]
+[editable path="Tiles/Windows/World_tile4"]
+[editable path="Tiles/Extras/World_tile2"]
+[editable path="Tiles/Extras/World_tile"]
+[editable path="Tiles/Extras/World_tile3"]
+[editable path="Tiles/Extras/World_tile4"]
+[editable path="Tiles/Extras/World_tile5"]
+[editable path="Tiles/Extras/World_tile6"]
+[editable path="Tiles/Extras/World_tile7"]
+[editable path="ChangeStation"]
+[editable path="Wallet"]

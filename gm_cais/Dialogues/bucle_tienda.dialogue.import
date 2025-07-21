@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bh8gp0vobxto2"
+path="res://.godot/imported/bucle_tienda.dialogue-5f9c2799897466c217badfbde8bdccd1.tres"
+
+[deps]
+
+source_file="res://Dialogues/bucle_tienda.dialogue"
+dest_files=["res://.godot/imported/bucle_tienda.dialogue-5f9c2799897466c217badfbde8bdccd1.tres"]
+
+[params]
+
+defaults=true

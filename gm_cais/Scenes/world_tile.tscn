@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cab34l7km8211"]
+
+[ext_resource type="Script" uid="uid://bkap7g4j18jk" path="res://Scripts/WorldTile.gd" id="1_hapds"]
+[ext_resource type="Texture2D" uid="uid://gccoj7x2p2st" path="res://icon.svg" id="1_s5va5"]
+
+[sub_resource type="Animation" id="Animation_s5va5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hapds"]
+resource_name = "spawn_animation"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.26667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1122), Vector2(0, 0), Vector2(0, -66), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5wcij"]
+_data = {
+&"RESET": SubResource("Animation_s5va5"),
+&"spawn_animation": SubResource("Animation_hapds")
+}
+
+[node name="World_tile" type="Node2D"]
+script = ExtResource("1_hapds")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_s5va5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5wcij")
+}

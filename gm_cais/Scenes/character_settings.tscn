@@ -1,0 +1,1030 @@
+[gd_scene load_steps=23 format=3 uid="uid://smenit0xx8ri"]
+
+[ext_resource type="Texture2D" uid="uid://dikvfwatgb6hb" path="res://Assets/CharacterAssets/Robot_variant_color.png" id="1_dm3aw"]
+[ext_resource type="Script" uid="uid://dpabttyy72j4h" path="res://Scripts/CharacterSettings.gd" id="1_rbhb7"]
+[ext_resource type="Shader" uid="uid://ccyajy284nnjb" path="res://Assets/Shaders/Background.gdshader" id="2_c1ybt"]
+[ext_resource type="Texture2D" uid="uid://05qsp5chcviw" path="res://Assets/flecha.png" id="2_f5lxk"]
+[ext_resource type="Texture2D" uid="uid://cthfa6q43t4cr" path="res://Assets/CharacterAssets/Clothes_color.png" id="3_pnjde"]
+[ext_resource type="Texture2D" uid="uid://bp2d1my0bnwbb" path="res://Assets/CharacterAssets/Face_color.png" id="4_xestt"]
+[ext_resource type="Texture2D" uid="uid://ddad5h002sq08" path="res://Assets/CharacterAssets/Hair_style.png" id="5_bmh53"]
+[ext_resource type="PackedScene" uid="uid://cdriqklv02x0c" path="res://Scenes/item.tscn" id="6_uhu7k"]
+[ext_resource type="PackedScene" uid="uid://ywoel8qdx1lv" path="res://Scenes/transition.tscn" id="6_xestt"]
+[ext_resource type="Texture2D" uid="uid://c6stho2if2nnb" path="res://Assets/FreeCityBuilder/FreeAssets/Building_House5.png" id="7_f5lxk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c1ybt"]
+shader = ExtResource("2_c1ybt")
+shader_parameter/bottom_color = Color(0.486275, 0.0588235, 0.0470588, 1)
+shader_parameter/top_color = Color(3.85046e-06, 0.628169, 0.846444, 1)
+shader_parameter/wave_amp = 0.241
+shader_parameter/wave_size = 1.57
+shader_parameter/wave_time_mul = 0.413
+shader_parameter/total_phases = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_c1ybt"]
+font_size = 30
+font_color = Color(0.473004, 0.768403, 0.980321, 1)
+outline_size = 20
+outline_color = Color(0.136826, 0.136826, 0.136826, 1)
+
+[sub_resource type="Animation" id="Animation_xestt"]
+resource_name = "Hide_m1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RobotSelection:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RobotSelection:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_bmh53"]
+resource_name = "Hide_m2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorSelection:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorSelection:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_uhu7k"]
+resource_name = "Hide_m3"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkinSelection:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SkinSelection:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_c1ybt"]
+resource_name = "Hide_m4"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlowSelection:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlowSelection:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_edjej"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RobotSelection:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorSelection:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkinSelection:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RobotSelection:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorSelection:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SkinSelection:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RobotSelection:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorSelection:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SkinSelection:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GlowSelection:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GlowSelection:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("GlowSelection:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_rbhb7"]
+resource_name = "Show_m1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RobotSelection:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -800), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RobotSelection:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RobotSelection:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_oioj1"]
+resource_name = "Show_m2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorSelection:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -800), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorSelection:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorSelection:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_pnjde"]
+resource_name = "Show_m3"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkinSelection:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -800), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SkinSelection:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkinSelection:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_f5lxk"]
+resource_name = "Show_m4"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlowSelection:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -800), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlowSelection:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlowSelection:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xestt"]
+_data = {
+&"Hide_m1": SubResource("Animation_xestt"),
+&"Hide_m2": SubResource("Animation_bmh53"),
+&"Hide_m3": SubResource("Animation_uhu7k"),
+&"Hide_m4": SubResource("Animation_c1ybt"),
+&"RESET": SubResource("Animation_edjej"),
+&"Show_m1": SubResource("Animation_rbhb7"),
+&"Show_m2": SubResource("Animation_oioj1"),
+&"Show_m3": SubResource("Animation_pnjde"),
+&"Show_m4": SubResource("Animation_f5lxk")
+}
+
+[node name="CharacterSettings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+mouse_filter = 2
+script = ExtResource("1_rbhb7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_c1ybt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBttn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 19.0
+offset_right = 135.0
+offset_bottom = 143.0
+
+[node name="Sprite2D" type="Sprite2D" parent="BackBttn"]
+position = Vector2(51, 52)
+rotation = -1.5708
+scale = Vector2(0.2, -0.2)
+texture = ExtResource("2_f5lxk")
+
+[node name="Label" type="Label" parent="BackBttn"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 92.0
+offset_right = 326.0
+offset_bottom = 233.0
+scale = Vector2(0.609358, 0.609358)
+text = "Anterior"
+label_settings = SubResource("LabelSettings_c1ybt")
+
+[node name="NextBttn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.887826
+anchor_top = 0.0261538
+anchor_right = 0.983478
+anchor_bottom = 0.226154
+offset_bottom = -1.52588e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="NextBttn"]
+position = Vector2(57, 51)
+rotation = -1.5708
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_f5lxk")
+
+[node name="Label" type="Label" parent="NextBttn"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = 27.5
+offset_right = 155.0
+offset_bottom = 73.5
+grow_vertical = 2
+scale = Vector2(0.609358, 0.609358)
+text = "Siguiente"
+label_settings = SubResource("LabelSettings_c1ybt")
+
+[node name="RobotSelection" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="RobotSelection"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -293.5
+offset_top = -206.5
+offset_right = 293.5
+offset_bottom = 206.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BotMale" type="Button" parent="RobotSelection/Panel"]
+layout_mode = 2
+anchor_left = -0.639
+anchor_top = 0.044
+anchor_right = -0.639
+anchor_bottom = 0.044
+offset_left = 472.093
+offset_top = 7.828
+offset_right = 519.093
+offset_bottom = 98.828
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="RobotSelection/Panel/BotMale"]
+position = Vector2(23.75, 46.5)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_dm3aw")
+hframes = 4
+vframes = 2
+
+[node name="BotFemale" type="Button" parent="RobotSelection/Panel"]
+layout_mode = 2
+anchor_left = -0.639
+anchor_top = 0.044
+anchor_right = -0.639
+anchor_bottom = 0.044
+offset_left = 681.093
+offset_top = 5.828
+offset_right = 728.093
+offset_bottom = 96.828
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="RobotSelection/Panel/BotFemale"]
+position = Vector2(23.75, 46.5)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_dm3aw")
+hframes = 4
+vframes = 2
+frame = 4
+
+[node name="ColorSelection" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="ColorSelection"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -409.0
+offset_top = -206.0
+offset_right = 294.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BotSprite2D" type="Sprite2D" parent="ColorSelection/Panel"]
+position = Vector2(253, 208)
+scale = Vector2(0.825, 0.825)
+texture = ExtResource("1_dm3aw")
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="GridContainer" type="GridContainer" parent="ColorSelection/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.585
+anchor_top = 0.282
+anchor_right = 0.898
+anchor_bottom = 0.564
+offset_left = 0.244965
+offset_right = -175.794
+offset_bottom = -87.824
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+mouse_filter = 2
+columns = 4
+
+[node name="BlueBttn" type="Button" parent="ColorSelection/Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="ColorRect" type="ColorRect" parent="ColorSelection/Panel/GridContainer/BlueBttn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.12874, 0.442399, 0.865016, 1)
+
+[node name="YellowBttn" type="Button" parent="ColorSelection/Panel/GridContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="ColorSelection/Panel/GridContainer/YellowBttn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.97488, 0.672895, 0.186945, 1)
+
+[node name="RedBttn" type="Button" parent="ColorSelection/Panel/GridContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="ColorSelection/Panel/GridContainer/RedBttn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.820594, 0.138746, 0.310875, 1)
+
+[node name="GreenBttn" type="Button" parent="ColorSelection/Panel/GridContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="ColorSelection/Panel/GridContainer/GreenBttn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0.537562, 0.43639, 1)
+
+[node name="SkinSelection" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="SkinSelection"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.0
+offset_top = -183.0
+offset_right = 241.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BttnLeft" type="VBoxContainer" parent="SkinSelection/Panel"]
+custom_minimum_size = Vector2(20, 20)
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -78.0
+offset_right = 71.0
+offset_bottom = 78.0
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="SkinSelection/Panel/BttnLeft"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftHair" type="Button" parent="SkinSelection/Panel/BttnLeft/Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.0
+offset_right = 22.0
+offset_bottom = 27.0
+grow_horizontal = 2
+size_flags_vertical = 4
+
+[node name="Sprite2D2" type="Sprite2D" parent="SkinSelection/Panel/BttnLeft/Control/LeftHair"]
+position = Vector2(20.5, 13)
+rotation = -1.5708
+scale = Vector2(0.0695027, -0.0695027)
+texture = ExtResource("2_f5lxk")
+
+[node name="LeftFace" type="Button" parent="SkinSelection/Panel/BttnLeft/Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -13.5
+offset_right = 22.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="Sprite2D3" type="Sprite2D" parent="SkinSelection/Panel/BttnLeft/Control/LeftFace"]
+position = Vector2(21.5, 12.5)
+rotation = -1.5708
+scale = Vector2(0.0695027, -0.0695027)
+texture = ExtResource("2_f5lxk")
+
+[node name="LeftClothes" type="Button" parent="SkinSelection/Panel/BttnLeft/Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -27.0
+offset_right = 22.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+
+[node name="Sprite2D4" type="Sprite2D" parent="SkinSelection/Panel/BttnLeft/Control/LeftClothes"]
+position = Vector2(22.5, 12)
+rotation = -1.5708
+scale = Vector2(0.0695027, -0.0695027)
+texture = ExtResource("2_f5lxk")
+
+[node name="BttnRight" type="VBoxContainer" parent="SkinSelection/Panel"]
+custom_minimum_size = Vector2(20, 20)
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -78.0
+offset_bottom = 78.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="SkinSelection/Panel/BttnRight"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RightHair" type="Button" parent="SkinSelection/Panel/BttnRight/Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.0
+offset_right = 22.0
+offset_bottom = 27.0
+grow_horizontal = 2
+size_flags_vertical = 4
+
+[node name="Sprite2D5" type="Sprite2D" parent="SkinSelection/Panel/BttnRight/Control/RightHair"]
+position = Vector2(24.5, 13)
+rotation = -1.5708
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_f5lxk")
+
+[node name="RightFace" type="Button" parent="SkinSelection/Panel/BttnRight/Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -13.5
+offset_right = 22.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="Sprite2D6" type="Sprite2D" parent="SkinSelection/Panel/BttnRight/Control/RightFace"]
+position = Vector2(25.5, 13.5)
+rotation = -1.5708
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_f5lxk")
+
+[node name="RightClothes" type="Button" parent="SkinSelection/Panel/BttnRight/Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -27.0
+offset_right = 22.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+
+[node name="Sprite2D7" type="Sprite2D" parent="SkinSelection/Panel/BttnRight/Control/RightClothes"]
+position = Vector2(25.5, 13)
+rotation = -1.5708
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_f5lxk")
+
+[node name="ClothesSprite" type="Sprite2D" parent="SkinSelection/Panel"]
+position = Vector2(250.407, 231.407)
+scale = Vector2(1.50678, 1.50678)
+texture = ExtResource("3_pnjde")
+hframes = 4
+vframes = 2
+
+[node name="FaceSprite" type="Sprite2D" parent="SkinSelection/Panel"]
+position = Vector2(250.407, 147.407)
+scale = Vector2(1.50678, 1.50678)
+texture = ExtResource("4_xestt")
+hframes = 4
+vframes = 2
+
+[node name="HairSprite" type="Sprite2D" parent="SkinSelection/Panel"]
+position = Vector2(249.407, 145.407)
+scale = Vector2(1.50678, 1.50678)
+texture = ExtResource("5_bmh53")
+hframes = 4
+vframes = 2
+
+[node name="GlowSelection" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="GlowSelection"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -409.0
+offset_top = -206.0
+offset_right = 294.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Item_muestra" parent="GlowSelection/Panel" instance=ExtResource("6_uhu7k")]
+position = Vector2(360, 107)
+
+[node name="Sprite2D" parent="GlowSelection/Panel/Item_muestra" index="0"]
+scale = Vector2(0.460742, 0.460742)
+texture = ExtResource("7_f5lxk")
+
+[node name="Area2D" parent="GlowSelection/Panel/Item_muestra" index="1"]
+position = Vector2(0, 49)
+
+[node name="GridContainer" type="GridContainer" parent="GlowSelection/Panel"]
+layout_direction = 4
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.5
+offset_top = 322.0
+offset_right = -53.5
+offset_bottom = 330.0
+grow_horizontal = 2
+scale = Vector2(5, 5)
+mouse_filter = 2
+columns = 4
+
+[node name="BlueBttn" type="Button" parent="GlowSelection/Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="ColorRect" type="ColorRect" parent="GlowSelection/Panel/GridContainer/BlueBttn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.12874, 0.442399, 0.865016, 1)
+
+[node name="YellowBttn" type="Button" parent="GlowSelection/Panel/GridContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GlowSelection/Panel/GridContainer/YellowBttn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.97488, 0.672895, 0.186945, 1)
+
+[node name="RedBttn" type="Button" parent="GlowSelection/Panel/GridContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GlowSelection/Panel/GridContainer/RedBttn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.820594, 0.138746, 0.310875, 1)
+
+[node name="GreenBttn" type="Button" parent="GlowSelection/Panel/GridContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GlowSelection/Panel/GridContainer/GreenBttn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0.537562, 0.43639, 1)
+
+[node name="AnimationMenu" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xestt")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Transition" parent="." instance=ExtResource("6_xestt")]
+
+[connection signal="pressed" from="BackBttn" to="." method="_on_back_bttn_pressed"]
+[connection signal="pressed" from="NextBttn" to="." method="_on_next_bttn_pressed"]
+[connection signal="pressed" from="RobotSelection/Panel/BotMale" to="." method="_on_bot_male_pressed"]
+[connection signal="pressed" from="RobotSelection/Panel/BotFemale" to="." method="_on_bot_female_pressed"]
+[connection signal="pressed" from="ColorSelection/Panel/GridContainer/BlueBttn" to="." method="_on_blue_bttn_pressed"]
+[connection signal="pressed" from="ColorSelection/Panel/GridContainer/YellowBttn" to="." method="_on_yellow_bttn_pressed"]
+[connection signal="pressed" from="ColorSelection/Panel/GridContainer/RedBttn" to="." method="_on_red_bttn_pressed"]
+[connection signal="pressed" from="ColorSelection/Panel/GridContainer/GreenBttn" to="." method="_on_green_bttn_pressed"]
+[connection signal="pressed" from="SkinSelection/Panel/BttnLeft/Control/LeftHair" to="." method="_on_left_hair_pressed"]
+[connection signal="pressed" from="SkinSelection/Panel/BttnLeft/Control/LeftFace" to="." method="_on_left_face_pressed"]
+[connection signal="pressed" from="SkinSelection/Panel/BttnLeft/Control/LeftClothes" to="." method="_on_left_clothes_pressed"]
+[connection signal="pressed" from="SkinSelection/Panel/BttnRight/Control/RightHair" to="." method="_on_right_hair_pressed"]
+[connection signal="pressed" from="SkinSelection/Panel/BttnRight/Control/RightFace" to="." method="_on_right_face_pressed"]
+[connection signal="pressed" from="SkinSelection/Panel/BttnRight/Control/RightClothes" to="." method="_on_right_clothes_pressed"]
+[connection signal="pressed" from="GlowSelection/Panel/GridContainer/BlueBttn" to="." method="_on_blue_bttn_pressed"]
+[connection signal="pressed" from="GlowSelection/Panel/GridContainer/YellowBttn" to="." method="_on_yellow_bttn_pressed"]
+[connection signal="pressed" from="GlowSelection/Panel/GridContainer/RedBttn" to="." method="_on_red_bttn_pressed"]
+[connection signal="pressed" from="GlowSelection/Panel/GridContainer/GreenBttn" to="." method="_on_green_bttn_pressed"]
+[connection signal="animation_finished" from="AnimationMenu" to="." method="_on_animation_menu_animation_finished"]
+[connection signal="animation_started" from="AnimationMenu" to="." method="_on_animation_menu_animation_started"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+
+[editable path="GlowSelection/Panel/Item_muestra"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2sy0ayrr580x"]
+
+[ext_resource type="PackedScene" uid="uid://cdkn4vnoi1lkf" path="res://Scenes/money_card.tscn" id="1_gsk7f"]
+[ext_resource type="Script" uid="uid://ouec17u414ns" path="res://Scripts/MoneyManager.gd" id="1_t6eqr"]
+[ext_resource type="PackedScene" uid="uid://cu7vducfc46da" path="res://Scenes/money_slots.tscn" id="3_kk2ef"]
+
+[node name="MoneyManager" type="Node2D"]
+script = ExtResource("1_t6eqr")
+
+[node name="MoneyCard" parent="." instance=ExtResource("1_gsk7f")]
+
+[node name="MoneySlot" parent="." instance=ExtResource("3_kk2ef")]
+position = Vector2(488, 246)

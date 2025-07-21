@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=3 uid="uid://41col1ggcja7"]
+
+[ext_resource type="Script" uid="uid://bsykihcnktdu4" path="res://Scripts/Character.gd" id="1_ushfy"]
+[ext_resource type="Texture2D" uid="uid://cthfa6q43t4cr" path="res://Assets/CharacterAssets/Clothes_color.png" id="3_ejsiy"]
+[ext_resource type="Texture2D" uid="uid://bp2d1my0bnwbb" path="res://Assets/CharacterAssets/Face_color.png" id="4_2mse5"]
+[ext_resource type="Texture2D" uid="uid://xkosm1t3un3r" path="res://Assets/CharacterAssets/Robot_city_sprite_sheet.png" id="5_ejsiy"]
+[ext_resource type="Texture2D" uid="uid://ddad5h002sq08" path="res://Assets/CharacterAssets/Hair_style.png" id="5_reotu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ushfy"]
+radius = 78.2624
+
+[sub_resource type="Animation" id="Animation_nytcm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_owm7s"]
+resource_name = "idle_animation"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -7), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ejsiy"]
+resource_name = "walk_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -7), Vector2(0, 0), Vector2(0, -7), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.73, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.220427, 0.0, 0.219911, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2mse5"]
+_data = {
+&"RESET": SubResource("Animation_nytcm"),
+&"idle_animation": SubResource("Animation_owm7s"),
+&"walk_animation": SubResource("Animation_ejsiy")
+}
+
+[node name="Character" type="CharacterBody2D"]
+script = ExtResource("1_ushfy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+hframes = 8
+vframes = 5
+frame = 1
+
+[node name="ClothesSprite" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-2, 71)
+scale = Vector2(1.02687, 1.02687)
+texture = ExtResource("3_ejsiy")
+hframes = 4
+vframes = 2
+
+[node name="FaceSprite" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-1.38781, 16.6122)
+scale = Vector2(1.02687, 1.02687)
+texture = ExtResource("4_2mse5")
+hframes = 4
+vframes = 2
+
+[node name="HairSprite" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-1.38781, 16.6122)
+scale = Vector2(1.02687, 1.02687)
+texture = ExtResource("5_reotu")
+hframes = 4
+vframes = 2
+
+[node name="RobotSprite" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-77, 55)
+scale = Vector2(0.574081, 0.574081)
+texture = ExtResource("5_ejsiy")
+hframes = 4
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ushfy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2mse5")
+}

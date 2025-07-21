@@ -1,0 +1,59 @@
+~ escena1
+do Global.load_mp3(0)
+do play_audio()
+TeaBot: La misión que tenemos hoy es emocionante: Iremos a la tienda.\nPrimero, salgamos a la calle
+do change_station.set_glow(true)
+do mensajeloop.set_dialogue(0)
+=> END
+
+~ escena2
+do Global.load_mp3(1)
+do play_audio()
+do tienda.set_glow(true)
+TeaBot: Ya estamos en la calle. ¿Ves la tienda? es esa casita roja que brilla.\nQue suerte, tenemos la tienda justo al lado.
+do mensajeloop.set_dialogue(1)
+=> END
+
+~ escena3
+do Global.load_mp3(2)
+do play_audio()
+TeaBot: Muy bien, hemos llegado
+do Global.load_mp3(3)
+do play_audio()
+TeaBot: ¿Qué te gustaría comprar? ¿Un paquete de galletas o una caja de jugo?
+#do mensajeloop.set_dialogue(2)
+- Paquete de galletas 🍪
+	#do mensajeloop.stop()
+	do set_glow_items(1)
+	do Global.load_mp3(4)
+	do play_audio()
+	TeaBot: Bien, entonces tomemos unas  galletas. \n¿Ves el estante que brilla? Seguramente están ahí
+	do mensajeloop.set_dialogue(3)
+- Caja de jugo 🧃
+	#do mensajeloop.stop()
+	do set_glow_items(2)
+	do Global.load_mp3(5)
+	do play_audio()
+	TeaBot: Bien, entonces vamos por un jugo. \n¿Ves esa nevera que brilla? ahí guardan las bebidas
+	do mensajeloop.set_dialogue(4)
+	#TeaBot: ¿Ves esa nevera que brilla? ahí guardan las bebidas
+=> END
+
+~ escena3_2
+do Global.load_mp3(6)
+do play_audio()
+do puerta.set_glow(true)
+do mensajeloop.stop()
+TeaBot: Estamos listos. Por esta vez yo voy a pagar, así que no te preocupes. \nPodemos irnos a casa
+do mensajeloop.set_dialogue(0)
+=> END
+
+~ escena4
+do Global.load_mp3(7)
+do play_audio()
+do casa.set_glow(true)
+TeaBot: Muy bien. Para completar la misión debemos regresar a casa. \n¿Recuerdas nuestra casa? Es la casa azul que está brillando.
+do mensajeloop.set_dialogue(5)
+do Global.lvl = 2
+=> END
+

@@ -1,0 +1,88 @@
+~ escena1
+do Global.load_mp3_lvl2(0)
+do play_audio()
+TeaBot: La misión que tenemos ahora será un poco más intensa.\nIremos nuevamente  a la tienda
+do Global.load_mp3_lvl2(1)
+do play_audio()
+TeaBot: Empezemos. Salgamos a la calle.
+do change_station.set_glow(true)
+do mensajeloop.set_dialogue(0)
+=> END
+
+~ escena2
+do Global.load_mp3_lvl2(2)
+do play_audio()
+TeaBot: Ya estamos en la calle.
+do zoom_to(1.5, 1.5)
+do Global.load_mp3_lvl2(3)
+do play_audio()
+TeaBot: Observa, están arreglando la carretera. \nEn unos días la carretera estará funcionando
+do Global.load_mp3_lvl2(4)
+do play_audio()
+TeaBot: La próxima vez tendremos que cruzar la calle y los autos
+do zoom_to(1.0, 1.5)
+do Global.load_mp3_lvl2(5)
+do play_audio()
+TeaBot: Por ahora continuemos, vamos a la tienda. \nRecuerda, la tienda es el edificio rojo
+do tienda.set_glow(true)
+do mensajeloop.set_dialogue(1)
+=> END
+
+~ escena3
+do Global.load_mp3_lvl2(6)
+do play_audio()
+TeaBot: Estamos en la tienda. \nHoy compraremos una manzana
+do Global.load_mp3_lvl2(7)
+do play_audio()
+TeaBot: No veo ninguna en ningún lado
+do Global.load_mp3_lvl2(8)
+do play_audio()
+TeaBot: Vamos a hablar con el señor de la tienda, preguntémosle si tiene manzanas.
+do set_glow_items(3)
+do mensajeloop.set_dialogue_2(6)
+=> END
+
+~ escena4
+do Global.load_mp3_lvl2(9)
+do play_audio()
+Señor de la tienda: Buenas tardes amigos, díganme, ¿qué necesitas?
+- Buenas tardes señor, ¿Sabe donde hay manzanas?
+	do Global.load_mp3_lvl2(10)
+	do play_audio()
+	Señor de la tienda: Las manzanas están en el mostrador al lado de la puerta
+	do Global.load_mp3_lvl2(11)
+	do play_audio()
+	TeaBot: Siempre hay que agradecer por la información
+	- Gracias señor
+		do Global.load_mp3_lvl2(12)
+		do play_audio()
+		Señor de la tienda: No hay que que, ten un buen día
+	do set_glow_items(4)
+	do Global.load_mp3_lvl2(13)
+	do play_audio()
+	TeaBot: Ya sabemos donde están, vamos por la manzana
+	do mensajeloop.set_dialogue_2(7)
+- No decir nada
+	do Global.load_mp3_lvl2(14)
+	do play_audio()
+	TeaBot: Si no le preguntamos no sabremos donde están las manzanas. \nIntenta de nuevo
+	do set_glow_items(3)
+	do set_step(0)
+=> END
+
+~ escena5
+do Global.load_mp3_lvl2(15)
+do play_audio()
+TeaBot: Bien hecho, hoy tambien pagaré yo, no te preocupes. \nPodemos irnos a casa
+do puerta.set_glow(true)
+do mensajeloop.set_dialogue(0)
+=> END
+
+~ escena6
+do Global.load_mp3_lvl2(16)
+do play_audio()
+TeaBot: Para terminar la misión dale a la casa. Recuerda, es la casa color azul
+do casa.set_glow(true)
+do mensajeloop.set_dialogue(5)
+do Global.lvl = 3
+=> END

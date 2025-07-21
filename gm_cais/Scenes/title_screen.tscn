@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://c42tfpr6dspw2"]
+
+[ext_resource type="Script" uid="uid://kit8yynfjkw6" path="res://Scripts/TitleScreen.gd" id="1_55kwv"]
+[ext_resource type="Shader" uid="uid://ccyajy284nnjb" path="res://Assets/Shaders/Background.gdshader" id="1_klylv"]
+[ext_resource type="PackedScene" uid="uid://ywoel8qdx1lv" path="res://Scenes/transition.tscn" id="2_twnyg"]
+[ext_resource type="Texture2D" uid="uid://05qsp5chcviw" path="res://Assets/flecha.png" id="3_55kwv"]
+[ext_resource type="Texture2D" uid="uid://b66tnn3cfce8a" path="res://Assets/teabot logo.png" id="4_12m1t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p3fck"]
+shader = ExtResource("1_klylv")
+shader_parameter/bottom_color = Color(0.486275, 0.0588235, 0.0470588, 1)
+shader_parameter/top_color = Color(3.85046e-06, 0.628169, 0.846444, 1)
+shader_parameter/wave_amp = 0.241
+shader_parameter/wave_size = 1.57
+shader_parameter/wave_time_mul = 0.413
+shader_parameter/total_phases = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_6vd4x"]
+font_size = 50
+font_color = Color(0.473004, 0.768403, 0.980321, 1)
+outline_size = 20
+outline_color = Color(0.0430391, 0.0430392, 0.0430392, 1)
+
+[node name="Title_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_55kwv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_p3fck")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Transition" parent="." instance=ExtResource("2_twnyg")]
+
+[node name="Next_Bttn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 459.0
+offset_right = 792.0
+offset_bottom = 544.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Next_Bttn"]
+position = Vector2(77, 38)
+rotation = -1.5708
+scale = Vector2(0.186, 0.186)
+texture = ExtResource("3_55kwv")
+
+[node name="Label" type="Label" parent="Next_Bttn"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 16.0
+offset_right = 413.0
+offset_bottom = 101.0
+scale = Vector2(0.609358, 0.609358)
+text = "Vamos a jugar"
+label_settings = SubResource("LabelSettings_6vd4x")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(596, 247)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_12m1t")
+
+[connection signal="pressed" from="Next_Bttn" to="." method="_on_next_bttn_pressed"]

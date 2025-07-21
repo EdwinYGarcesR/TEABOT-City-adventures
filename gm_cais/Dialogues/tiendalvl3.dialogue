@@ -1,0 +1,163 @@
+~ escena1
+do Global.load_mp3_lvl3(0)
+do play_audio()
+TeaBot: ¿Listo para la nueva misión?.\nHoy iremos a la tienda
+do Global.load_mp3_lvl3(1)
+do play_audio()
+TeaBot: Pero esta vez tu vas a pagar. No te preocupes, compraremos algo sencillo
+do Global.load_mp3_lvl3(2)
+do play_audio()
+TeaBot: Primero necesitamos tomar algo de dinero.\n En tu armario está tu billetera, con eso podremos comprar.
+do wallet.set_glow(true)
+=> END
+
+~ escena2
+do Global.load_mp3_lvl3(3)
+do play_audio()
+TeaBot: Ya tenemos el dinero, es hora de irnos.\nSalgamos a la calle
+do change_station.set_glow(true)
+do mensajeloop.set_dialogue(0)
+=> END
+
+~ escena3
+do Global.load_mp3_lvl3(4)
+do play_audio()
+TeaBot: Listo, ya estamos en la calle
+do zoom_to(1.5, 1.5)
+do Global.load_mp3_lvl3(5)
+do play_audio()
+TeaBot: Mira, la carretera ya está completa. \nHay varios vehículos
+do Global.load_mp3_lvl3(6)
+do play_audio()
+TeaBot: Justo en la calle hay un semáforo para peatones, perfecto
+do zoom_to(1.0, 1.5)
+do Global.load_mp3_lvl3(7)
+do play_audio()
+TeaBot: Vamos hasta el semáforo, así sabremos cuando cruzar
+do semaforo.set_glow(true)
+=> END
+
+~ escena4
+do Global.load_mp3_lvl3(8)
+do play_audio()
+TeaBot: Muy bien, debemos esperar a que esté en verde
+do zoom_to(1.5, 1.5)
+do set_stop_traffic(true)
+do Global.load_mp3_lvl3(9)
+do play_audio()
+TeaBot: Mira, ya cambió. Además, los autos se detuvieron. \nSignifica que es seguro pasar
+do Global.load_mp3_lvl3(10)
+do play_audio()
+TeaBot: Para pasar la calle dale al otro lado de la calle
+do semaforo2.set_glow(true)
+=> END
+
+~ escena5
+do set_stop_traffic(false)
+do Global.load_mp3_lvl3(11)
+do play_audio()
+TeaBot: Buen trabajo, lo hiciste muy bien. \nRecuerda, siempre debes pasar cuando los autos estén quietos
+do zoom_to(1.0, 1.5)
+do Global.load_mp3_lvl3(12)
+do play_audio()
+TeaBot: Ahora podemos seguir el camino hasta la tienda
+do tienda.set_glow(true)
+=> END
+
+~ escena6
+do Global.load_mp3_lvl3(13)
+do play_audio()
+TeaBot: Hemos llegado. Buen trabajo. \nHoy vamos a comprar una bolsa de leche. Están siempre en la nevera de al fondo
+do set_glow_items(2)
+=> END
+
+~ escena7
+do Global.load_mp3_lvl3(14)
+do play_audio()
+TeaBot: Tenemos la leche. Ahora vamos a pagar. \nVamos a la caja registradora
+do set_glow_items(3)
+=> END
+
+~ escena8
+do Global.load_mp3_lvl3(15)
+do play_audio()
+Señor de la tienda: Buenas tardes amigos, ¿que van a comprar?
+- Solo esta bolsa de leche
+	do Global.load_mp3_lvl3(16)
+	do play_audio()
+	Señor de la tienda: Bien, la bolsa solo cuesta 3 pesos
+	do Global.load_mp3_lvl3(17)
+	do play_audio()
+	TeaBot: En tu billetera tienes un billete de 5 pesos. Hagamos las cuentas
+	do Global.load_mp3_lvl3(18)
+	do play_audio()
+	TeaBot: Si tenemos 5 pesos y restamos 3 pesos, ¿cuántos pesos nos quedan?. \n (5 - 3 = ?)
+	- 25 pesos
+		do Global.load_mp3_lvl3(19)
+		do play_audio()
+		TeaBot: Eso es demasiado dinero. La respuesta real son 2 pesos. \nSiempre debes contar muy bien el dinero en la tienda para no perderlo
+		do Global.load_mp3_lvl3(20)
+		do play_audio()
+		TeaBot: Hoy mejoraste mucho, la próxima seguro harás muy bien las cuentas. \nEs hora de volver a casa
+		do puerta.set_glow(true)		
+	- 2 pesos
+		do Global.load_mp3_lvl3(21)
+		do play_audio()
+		TeaBot: Bien hecho, nos quedan 2 pesos. \nSiempre debes contar muy bien el dinero en la tienda para no perderlo 
+		do Global.load_mp3_lvl3(26)
+		do play_audio()
+		TeaBot: Hoy compraste por ti mismo, muy bien hecho. \nEs hora de volver a casa
+		do puerta.set_glow(true)	
+	- 4 pesos
+		do Global.load_mp3_lvl3(23)
+		do play_audio()
+		TeaBot: Estuvo cerca. La respuesta real son 2 pesos. \nSiempre debes contar muy bien el dinero en la tienda para no perderlo
+		do Global.load_mp3_lvl3(24)
+		do play_audio()
+		TeaBot: Hoy mejoraste mucho, la próxima seguro harás muy bien las cuentas. \nEs hora de volver a casa
+		do puerta.set_glow(true)	
+- (No decir nada)
+	do Global.load_mp3_lvl3(25)
+	do play_audio()
+	TeaBot: Si no le hablas no podremos pagarle. \nIntenta de nuevo
+	do set_glow_items(3)
+	do set_step(1)
+=> END
+
+~ escena9
+do Global.load_mp3_lvl3(26)
+do play_audio()
+TeaBot: Hoy compraste por ti mismo, muy bien hecho. \nEs hora de volver a casa
+do puerta.set_glow(true)
+=> END
+
+~ escena10
+do Global.load_mp3_lvl3(27)
+do play_audio()
+TeaBot: Estamos nuevamente en la calle. Debemos pasar nuevamente la calle para llegar a casa. Vamos al semáforo
+do semaforo2.set_glow(true)
+=> END
+
+~ escena11
+do Global.load_mp3_lvl3(8)
+do play_audio()
+TeaBot: Muy bien, debemos esperar a que esté en verde
+do zoom_to(1.5, 1.5)
+do set_stop_traffic(true)
+do Global.load_mp3_lvl3(9)
+do play_audio()
+TeaBot: Mira, ya cambió. Además, los autos se detuvieron. \nSignifica que es seguro pasar
+do Global.load_mp3_lvl3(10)
+do play_audio()
+TeaBot: Para pasar la calle dale al otro lado de la calle
+do semaforo.set_glow(true)
+=> END
+
+~ escena12
+do set_stop_traffic(false)
+do zoom_to(1.0, 1.5)
+do Global.load_mp3_lvl3(28)
+do play_audio()
+TeaBot: Buen trabajo, lo hiciste muy bien. Ahora podemos seguir el camino hasta la casa. \nRecuerda, es la casa azul que está brillando
+do casa.set_glow(true)
+=> END

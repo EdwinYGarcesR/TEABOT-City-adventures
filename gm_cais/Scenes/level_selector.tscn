@@ -1,0 +1,225 @@
+[gd_scene load_steps=13 format=3 uid="uid://bqiu4bvm2kwuh"]
+
+[ext_resource type="Shader" uid="uid://ccyajy284nnjb" path="res://Assets/Shaders/Background.gdshader" id="1_22lal"]
+[ext_resource type="Script" uid="uid://d107bvouycn2h" path="res://Scripts/LevelSelector.gd" id="1_yk0gq"]
+[ext_resource type="Texture2D" uid="uid://skbw468gdccv" path="res://Assets/FreeCityBuilder/FreeAssets/Building_Groceries_red.png" id="2_x3xpc"]
+[ext_resource type="PackedScene" uid="uid://ywoel8qdx1lv" path="res://Scenes/transition.tscn" id="4_b8t80"]
+[ext_resource type="Texture2D" uid="uid://05qsp5chcviw" path="res://Assets/flecha.png" id="5_t6kw3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x3xpc"]
+shader = ExtResource("1_22lal")
+shader_parameter/bottom_color = Color(0.486275, 0.0588235, 0.0470588, 1)
+shader_parameter/top_color = Color(3.85046e-06, 0.628169, 0.846444, 1)
+shader_parameter/wave_amp = 0.241
+shader_parameter/wave_size = 1.57
+shader_parameter/wave_time_mul = 0.413
+shader_parameter/total_phases = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_t6kw3"]
+font_size = 50
+font_color = Color(0.899258, 0.899258, 0.899258, 1)
+outline_size = 20
+outline_color = Color(0.0430391, 0.0430392, 0.0430392, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yk0gq"]
+shader = ExtResource("1_22lal")
+shader_parameter/bottom_color = Color(0.066348, 0.49257, 0.5648, 1)
+shader_parameter/top_color = Color(0.0105229, 0.66064, 0.760156, 1)
+shader_parameter/wave_amp = 0.209
+shader_parameter/wave_size = 4.646
+shader_parameter/wave_time_mul = 0.846
+shader_parameter/total_phases = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_b8t80"]
+font_size = 30
+outline_size = 10
+outline_color = Color(0.0430391, 0.0430392, 0.0430392, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t6kw3"]
+shader = ExtResource("1_22lal")
+shader_parameter/bottom_color = Color(0.695503, 0.695503, 0.695503, 1)
+shader_parameter/top_color = Color(0, 0.384314, 0, 1)
+shader_parameter/wave_amp = 0.114
+shader_parameter/wave_size = 3.587
+shader_parameter/wave_time_mul = 0.461
+shader_parameter/total_phases = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_g3msu"]
+font_size = 20
+outline_size = 10
+outline_color = Color(0.0430391, 0.0430392, 0.0430392, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oef0k"]
+font_size = 50
+font_color = Color(0.473004, 0.768403, 0.980321, 1)
+outline_size = 20
+outline_color = Color(0.0430391, 0.0430392, 0.0430392, 1)
+
+[node name="Level_selector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_yk0gq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_x3xpc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 195.0
+offset_right = 638.0
+offset_bottom = 264.0
+scale = Vector2(0.609358, 0.609358)
+text = "Listado de misiones"
+label_settings = SubResource("LabelSettings_t6kw3")
+
+[node name="Mision_tienda" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.089
+anchor_top = 0.204
+anchor_right = 0.874
+anchor_bottom = 0.563
+offset_left = 58.472
+offset_top = 114.808
+offset_right = -418.848
+offset_bottom = -7.82401
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.1169, 2.1169)
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Mision_tienda"]
+material = SubResource("ShaderMaterial_yk0gq")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Mision_tienda"]
+layout_mode = 0
+offset_left = 4.46431
+offset_top = 4.46431
+offset_right = 70.4643
+offset_bottom = 32.4643
+scale = Vector2(0.609358, 0.609358)
+text = "Misión # 1 - Vamos a la tienda"
+label_settings = SubResource("LabelSettings_b8t80")
+
+[node name="Sprite2D" type="Sprite2D" parent="Mision_tienda"]
+position = Vector2(77.4717, 59.0485)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_x3xpc")
+
+[node name="GridContainer" type="GridContainer" parent="Mision_tienda"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.8021
+offset_top = -3.98206
+offset_right = 145.198
+offset_bottom = 27.0179
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.95233, 0.95233)
+columns = 3
+
+[node name="1_lvl1" type="Button" parent="Mision_tienda/GridContainer"]
+modulate = Color(1, 0.984314, 1, 1)
+self_modulate = Color(0.982343, 0.982342, 0.982342, 1)
+material = SubResource("ShaderMaterial_t6kw3")
+layout_mode = 2
+text = "Nivel 1"
+
+[node name="Label" type="Label" parent="Mision_tienda/GridContainer/1_lvl1"]
+layout_mode = 0
+offset_left = 4.46431
+offset_top = 4.46431
+offset_right = 70.4643
+offset_bottom = 32.4643
+scale = Vector2(0.844072, 0.844072)
+text = "Nivel 1"
+label_settings = SubResource("LabelSettings_g3msu")
+
+[node name="1_lvl2" type="Button" parent="Mision_tienda/GridContainer"]
+modulate = Color(1, 0.984314, 1, 1)
+self_modulate = Color(0.982343, 0.982342, 0.982342, 1)
+material = SubResource("ShaderMaterial_t6kw3")
+layout_mode = 2
+text = "Nivel 1"
+
+[node name="Label" type="Label" parent="Mision_tienda/GridContainer/1_lvl2"]
+layout_mode = 0
+offset_left = 4.46431
+offset_top = 4.46431
+offset_right = 70.4643
+offset_bottom = 32.4643
+scale = Vector2(0.844072, 0.844072)
+text = "Nivel 2"
+label_settings = SubResource("LabelSettings_g3msu")
+
+[node name="1_lvl3" type="Button" parent="Mision_tienda/GridContainer"]
+modulate = Color(1, 0.984314, 1, 1)
+self_modulate = Color(0.982343, 0.982342, 0.982342, 1)
+material = SubResource("ShaderMaterial_t6kw3")
+layout_mode = 2
+text = "Nivel 1"
+
+[node name="Label" type="Label" parent="Mision_tienda/GridContainer/1_lvl3"]
+layout_mode = 0
+offset_left = 4.46431
+offset_top = 4.46431
+offset_right = 70.4643
+offset_bottom = 32.4643
+scale = Vector2(0.844072, 0.844072)
+text = "Nivel 3"
+label_settings = SubResource("LabelSettings_g3msu")
+
+[node name="Transition" parent="." instance=ExtResource("4_b8t80")]
+
+[node name="Bck_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 51.0
+offset_right = 536.0
+offset_bottom = 193.0
+scale = Vector2(0.618367, 0.618367)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bck_button"]
+position = Vector2(80, 58)
+rotation = 1.5708
+scale = Vector2(-0.3, 0.3)
+texture = ExtResource("5_t6kw3")
+
+[node name="Label" type="Label" parent="Bck_button"]
+layout_mode = 0
+offset_left = 173.036
+offset_top = 29.1089
+offset_right = 677.036
+offset_bottom = 170.109
+scale = Vector2(0.609358, 0.609358)
+text = "Ajustar nuevamente 
+tu personaje"
+label_settings = SubResource("LabelSettings_oef0k")
+
+[connection signal="pressed" from="Mision_tienda/GridContainer/1_lvl1" to="." method="_on__lvl_1_pressed"]
+[connection signal="pressed" from="Mision_tienda/GridContainer/1_lvl2" to="." method="_on__lvl_2_pressed"]
+[connection signal="pressed" from="Mision_tienda/GridContainer/1_lvl3" to="." method="_on__lvl_3_pressed"]
+[connection signal="pressed" from="Bck_button" to="." method="_on_bck_button_pressed"]
